@@ -1,0 +1,29 @@
+/* RESET RULES */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.25;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+video,
+canvas,
+picture,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+:where(input, button, textarea, select) {
+    font: inherit;
+    color: inherit;
+}

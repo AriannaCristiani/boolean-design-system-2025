@@ -1,10 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Badge } from "../components/Badge";
+import { Badge } from "../components/Badge/Badge";
 
 const meta: Meta = {
     title: "Badge",
     component: Badge,
+    parameters: {
+        layout: 'centered'
+    },
 };
 
 export default meta;

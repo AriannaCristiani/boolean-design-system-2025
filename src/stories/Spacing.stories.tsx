@@ -27,7 +27,7 @@ const Style: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
             dl {
                 font-size: 1rem;
                 border: 1px solid #ccc;
-                max-width: calc(500rem / 16);
+                max-width: calc(550rem / 16);
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
                 border-bottom: none;
@@ -42,7 +42,6 @@ const Style: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
                 border-bottom: 1px solid #ccc;
                 padding: var(--spacing-sm)  var(--spacing-md);
                 font-family: monospace;
-                text-align: right;
                 display: grid;
                 grid-template-columns: subgrid;
                 gap: 1ch;
@@ -50,8 +49,8 @@ const Style: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
                 align-items: center;
             }
             .info {
-                background-color:rgb(138, 26, 182);
-                height: 1.5ch;
+                background-color:rgb(21, 104, 104);
+                height: var(--story-spacing);
                 border-radius: 2px;
                 width: var(--story-spacing);
                 display: block;
@@ -61,11 +60,21 @@ const Style: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
     </>;
 }
 
+const dimensions = ["zero", "xs", "sm", "md", "lg", "xl"] as const;
+
 export const Default: Story = {
     render: () => <>
+
+        <h1>Spacing</h1>
+        <p style={{ maxWidth: "55ch" }}>
+            Our spacing variables use a clamping mechanism to ensure that the
+            spacing is scalable across different screen sizes. * This is done by
+            using the `clamp()` function. * The minimum viewport width is 400px and
+            the maximum is 1200px.
+        </p>
         <Style>
             <dl>
-                {["zero", "xs", "sm", "md", "lg", "xl"].map((key) => (
+                {dimensions.map((key) => (
                     <React.Fragment key={key}>
                         <dt>{key}</dt>
                         <dd style={{ '--story-spacing': `var(--spacing-${key})` } as React.CSSProperties}>
@@ -80,3 +89,4 @@ export const Default: Story = {
         </Style>
     </>,
 }
+

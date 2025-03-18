@@ -29,7 +29,7 @@ const Style: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
                 border: 1px solid #ccc;
                 max-width: calc(500rem / 16);
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
                 border-bottom: none;
                 border-radius: 5px;
             }
@@ -43,7 +43,19 @@ const Style: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
                 padding: var(--spacing-sm)  var(--spacing-md);
                 font-family: monospace;
                 text-align: right;
+                display: grid;
+                grid-template-columns: subgrid;
+                gap: 1ch;
+                grid-column: 2/4;
+                align-items: center;
             }
+            .info {
+                background-color:rgb(138, 26, 182);
+                height: 1.5ch;
+                border-radius: 2px;
+                width: var(--story-spacing);
+                display: block;
+         }
         `}</style>
         {children}
     </>;
@@ -56,8 +68,11 @@ export const Default: Story = {
                 {["zero", "xs", "sm", "md", "lg", "xl"].map((key) => (
                     <React.Fragment key={key}>
                         <dt>{key}</dt>
-                        <dd>
-                            <SpaceCalculation value={`--spacing-${key}`} />
+                        <dd style={{ '--story-spacing': `var(--spacing-${key})` } as React.CSSProperties}>
+                            <span>
+                                <SpaceCalculation value={`--spacing-${key}`} />
+                            </span>
+                            <span className="info" />
                         </dd>
                     </React.Fragment>
                 ))}

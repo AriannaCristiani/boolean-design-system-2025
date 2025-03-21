@@ -1,4 +1,6 @@
 import type React from 'react';
+import root from "react-shadow";
+import css from "./Badge.css?raw";
 import "./Badge.css"
 
 type BadgeProps = {
@@ -12,10 +14,11 @@ export const Badge: React.FC<BadgeProps> = ({
     ...attrs
 }) => {
     return (
-        <span>
+        <root.div>
+            <style>{css}</style>
             <span className={`badge ${variant}`} {...attrs}>
                 {children}
             </span>
-        </span>
+        </root.div>
     );
 };

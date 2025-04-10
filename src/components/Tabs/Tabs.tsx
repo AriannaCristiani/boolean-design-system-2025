@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import React from "react";
-import { Item, type ItemProps } from "./Tabs.Items";
+import { Item, type ItemProps } from "./Tabs.Item";
 import { List } from "./Tabs.List";
 import { TabsContext } from "./Tabs.Context";
 import { Tab } from "./Tabs.Tab";

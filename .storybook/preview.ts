@@ -1,9 +1,12 @@
-import type { Preview } from '@storybook/react';
-import '../src/styles/reset.css';
-import '../src/styles/variables.css';
-import '../src/styles/typography.css';
+/** @type { import('@storybook/react').Preview } */
 
-const preview: Preview = {
+import { withThemeByClassName } from "@storybook/addon-themes";
+
+import "../src/styles/reset.css";
+import "../src/styles/variables.css";
+import "../src/styles/typography.css";
+
+const preview = {
   parameters: {
     controls: {
       matchers: {
@@ -12,6 +15,16 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    withThemeByClassName({
+      themes: {
+        light: "light-theme",
+        dark: "dark-theme",
+      },
+      defaultTheme: "light",
+      parentSelector: "body",
+    }),
+  ],
 };
 
 export default preview;

@@ -44,11 +44,33 @@ export const Default: Story = {
             <Tabs.Item label="Label 2">
                 <Skeleton>Tab content 2</Skeleton>
             </Tabs.Item>
-
-            <Tabs.Item label="Label 3">
+            <Tabs.Item
+                label={
+                    <span>
+                        Label 3 <Badge>New</Badge>
+                    </span>
+                }
+            >
                 <Skeleton>Tab content 3</Skeleton>
             </Tabs.Item>
-
+            <Tabs.Item
+                label={
+                    <span>
+                        Label 4 <Badge variant="positive">Positive</Badge>
+                    </span>
+                }
+            >
+                <Skeleton>Tab content 4</Skeleton>
+            </Tabs.Item>
+            <Tabs.Item
+                label={
+                    <span>
+                        Label 5 <Badge variant="negative">Negative</Badge>
+                    </span>
+                }
+            >
+                <Skeleton>Tab content 5</Skeleton>
+            </Tabs.Item>
         </Tabs>
     ),
 };

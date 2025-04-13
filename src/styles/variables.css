@@ -1,13 +1,13 @@
 :root {
-    /* SPACING */
+    /* Spacing */
     --spacing-zero: 0;
     --spacing-xs: clamp(4px, 2px + 0.5vw, 8px);
     --spacing-sm: clamp(8px, 4px + 1vw, 16px);
-    --spacing-md: clamp(16px, 8px + 1vw, 24px);
-    --spacing-lg: clamp(24px, 12px + 1vw, 32px);
-    --spacing-xl: clamp(32px, 16px + 2vw, 40px);
+    --spacing-md: clamp(16px, 12px + 1vw, 24px);
+    --spacing-lg: clamp(24px, 20px + 1vw, 32px);
+    --spacing-xl: clamp(32px, 24px + 2vw, 48px);
 
-    /* TYPOGRAPHY */
+    /* Typography */
     --font-size-hero: clamp(3.815rem, 3.573rem + 0.97vw, 4.3rem);
     --font-size-h1: clamp(2.896rem, 2.436rem + 1.838vw, 3.815rem);
     --font-size-h2: clamp(2.488rem, 2.206rem + 1.128vw, 3.052rem);
@@ -19,7 +19,7 @@
     --font-size-sm: 0.875rem;
     --font-size-xs: 0.75rem;
 
-    /* COLORS */
+    /* Colors */
     --hue-red: 25;
     --hue-pink: 350;
     --hue-purple: 310;
@@ -97,4 +97,12 @@
     --color-neutral-text: light-dark(var(--color-gray-12), var(--color-gray-1));
     --color-neutral-accent: light-dark(var(--color-gray-7), var(--color-gray-5));
 
+    /* Timing */
+    --timing: 1s;
+    --timing-fast: calc(var(--timing) * 0.15);
+    --timing-slow: calc(var(--timing) * 2);
+
+    @media (prefers-reduced-motion: reduce) {
+        --timing: 0s;
+    }
 }
